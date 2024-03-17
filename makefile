@@ -8,4 +8,4 @@ mv:
 	touch file.py data.csv; mv ${a} rsc;clear;ls rsc;ls rsc/${a}
 
 git:
-	git add --all; git commit -am "${a}" ; git push;git log --oneline;git status;echo '/033[1;92mTASK FINISHED!'
+	git add --all; git commit -am "${a}" ; git push;git log --oneline;git status;echo '\033[1;92mTASK FINISHED!'
