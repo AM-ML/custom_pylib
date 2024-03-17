@@ -5,24 +5,11 @@ from random import randint
 from subprocess import call
 
 RED = '\033[91m'
-LRED = '\033[1;31m'
 GREEN = '\033[92m'
-LGREEN = '\033[1;32m'
 YELLOW = '\033[93m'
-LYELLOW = '\033[1;33m'
 BLUE = '\033[94m'
-LBLUE = '\033[1;34m'
 CYAN = '\033[96m'
-LCYAN = '\033[1;36m'
 RESET = '\033[0m'
-LRESET = '\033[1;0m'
-
-def confirm(prompt,pcolor=LBLUE,ucolor=CYAN,t=0):
-	conf = pcolori(prompt,pcolor=pcolor,ucolor=ucolor,t=t)
-	if conf.lower() in ['y','yes','yeah','ya','1']:
-		return True
-	else:
-		return False
 
 def reset_color():
     print(RESET,end="")
@@ -50,11 +37,6 @@ def pgreeni(prompt,color=RESET,t=0):
     uin = input(f"{color}")
     reset_color()
     return uin
-
-def load_lib():
-    clear()
-    pcolor("loaded library!",color=LGREEN)
-    print()
 
 def pcyani(prompt,color=RESET,t=0):
     pcyan(prompt,end="",t=t)
@@ -196,49 +178,3 @@ def insert_data(arr:array):
         for i in arr[:-1]:
             file.write(f"{i},")
         file.write(f"{arr[-1]}\n")
-
-
-def plred(output, t=0,end="\n"):
-    smt(f"{LRED}{output}{RESET}", t=t,end=end)
-
-def plgreen(output, t=0, end="\n"):
-    smt(f"{LGREEN}{output}{RESET}",t=t, end=end)
-
-def plyellow(output, t=0, end="\n"):
-    smt(f"{LYELLOW}{output}{RESET}", t=t,end=end)
-
-def plblue(output, t=0, end="\n"):
-    smt(f"{LBLUE}{output}{RESET}", t=t,end=end)
-
-def plcyan(output, t=0, end="\n"):
-    smt(f"{LCYAN}{output}{RESET}", t=t,end=end)
-
-def plgreeni(prompt,color=RESET,t=0):
-    plgreen(prompt,end="",t=t)
-    uin = input(f"{color}")
-    reset_color()
-    return uin
-
-def plcyani(prompt,color=RESET,t=0):
-    plcyan(prompt,end="",t=t)
-    uin = input(f"{color}")
-    reset_color()
-    return uin
-
-def plredi(prompt,color=RESET,t=0):
-    plred(prompt,end="",t=t)
-    uin = input(f"{color}")
-    reset_color()
-    return uin
-
-def plbluei(prompt,color=RESET,t=0):
-    plblue(prompt,end="",t=t)
-    uin = input(f"{color}")
-    reset_color()
-    return uin
-
-def plyellowi(prompt,color=RESET,t=0):
-    plyellow(prompt,end="",t=t)
-    uin = input(f"{color}")
-    reset_color()
-    return uin

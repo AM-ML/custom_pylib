@@ -8,7 +8,7 @@ out, mout = equalize(out, mout)
 
 call("clear", shell=True)
 
-frac = pgreeni(f"{mout}: ", t=0.02, color=CYAN)
+frac = pcolori(f"{mout}: ", t=0.02,pcolor="\033[1;92m", ucolor="\033[1;96m")
 
 frac = frac.split("/")
 frac = [int(i.strip()) for i in frac]
@@ -25,4 +25,7 @@ a1,b1 = (int) (a/d), (int) (b/d)
 
 print()
 
-pgreen(f"{out}: {CYAN}{a1} / {b1}", t=0.03)
+a1 = f"{a1}"
+a = f"{a}"
+a1,a = equalize(a1,a)
+pcolor(f"{out}: {CYAN}{a1}/{b1}", t=0.03,color="\033[1;92m")

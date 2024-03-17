@@ -1,7 +1,5 @@
 default:
 	clear;python file.py
-f:
-	clear;python ${a}.py
 
 mv:
 	clear;mkdir ${a};mv *.py ${a};cp ${a}/lib.py .;cp makefile ${a};mv *.csv ${a};

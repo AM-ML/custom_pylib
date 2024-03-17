@@ -1,11 +1,9 @@
-import matplotlib.pylab as plt
-import pandas as pd
-import numpy as np
-import lib
+from pandas import read_csv
+from lib import pyellow
 
-lib.pyellow("lib loaded!")
+pyellow("lib loaded!")
 
-df = pd.read_csv("drawndata1.csv")
+df = read_csv("data.csv")
 
 df.head(3)
 
