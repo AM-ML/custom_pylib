@@ -1,0 +1,3 @@
+default:
+	python file.py
+
