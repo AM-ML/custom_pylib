@@ -2,12 +2,13 @@ import numpy as np
 from time import time
 from sys import exit
 from csv import DictReader
+from lib import fetch
 
-dt = np.array([[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8]])
+dt = fetch()
 
 
 def check():
-    with open("cache_1.csv", "r") as file:
+    with open("data.csv", "r") as file:
         fl = DictReader(file)
 
         data = []
@@ -15,8 +16,8 @@ def check():
         b = 0
 
         for row in fl:
-           rd1 = row["data1"]
-           rd2 = row["data2"]
+           rd1 = row["x1"]
+           rd2 = row["y"]
            data_row = np.array([float(rd1), float(rd2)])  # Convert to float
            data.append(data_row)
 
@@ -74,8 +75,8 @@ def gradient_descent(theta, x, y, alpha, iterations):
 def main():
     theta = [0, 0]
 
-    x = dt[:, 0]
-    y = dt[:, 1]
+    x = dt[0][:,0]
+    y = dt[1]
     iterations = 4000
     alpha = 0.03
 
@@ -87,8 +88,8 @@ def main():
 
     print(f"finished in: {t}s")
 
-    with open("cache_1.csv", "w") as fl:
-        fl.write("data1,data2\n")
+    with open("data.csv", "w") as fl:
+        fl.write("x1,y\n")
         for t in dt:
             fl.write(f"{t[0]},{t[1]}\n")
 
