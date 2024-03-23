@@ -27,8 +27,6 @@ def gradient_descent(x, y, theta, alpha, iterations):
     theta0_val = theta[0]
     theta1_val = theta[1]
   
-    m = len(y)
-
     for iteration in range(iterations):
         
         lrdw = diff(cost_func([theta0, theta1], x, y), theta0)
@@ -49,7 +47,7 @@ def main():
     x = data[:, 0]
     y = data[:, 1]
 
-    alpha = 0.05
+    alpha = 0.07
     iterations = 200
 
     theta = np.zeros(2)

@@ -50,7 +50,7 @@ def compute_gradient(w, b, x, y, iters, alpha):
         b_val = np.sum(errors) / m
         b -= alpha * b_val
 
-        print(f"{iteration}: {w[0]:.2f} {w[1]:.2f} {w[2]:.2f} {b}")
+        # print(f"{iteration}: {w[0]:.2f} {w[1]:.2f} {w[2]:.2f} {b}")
 
 def main():
     x, y = fetch()
@@ -63,8 +63,8 @@ def main():
 
     w, b = np.zeros(3, dtype=np.float64), 0.0
 
-    iters = 400
-    alpha = 0.003
+    iters = 500
+    alpha = 0.035
 
     t = time()
 

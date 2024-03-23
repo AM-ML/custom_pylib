@@ -21,4 +21,5 @@ y,z = [float(yn) for yn in y],[float(zn) for zn in z]
 
 scatter(y,z)
 
-show()
+if confirm("show results? "):
+    show()

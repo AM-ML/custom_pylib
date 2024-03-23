@@ -11,5 +11,3 @@ mv:
 
 git:
 	git add --all; git commit -am "${a}" ; git push;git log --oneline;git status;echo '\033[1;92mTASK FINISHED!'
-log:
-	clear;git log --oneline
