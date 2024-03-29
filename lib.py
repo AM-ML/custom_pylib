@@ -3,6 +3,10 @@ from time import sleep
 from numpy import array,sum,dot
 from random import randint
 from subprocess import call
+from math import exp
+
+def sigmoid(y) -> float:
+    return 1 / (1 + exp(-y))
 
 RED = '\033[91m'
 LRED = '\033[1;31m'
